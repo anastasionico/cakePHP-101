@@ -51,7 +51,7 @@ class ArticlesController extends AppController
 
 			// If for some reason it doesn’t save, just render the view. This gives us a chance to show the user validation errors or other warnings.
 			if($this->Articles->save($article)){
-				$this->flash->success(__('Your Article has been saved'));
+				$this->Flash->success(__('Your Article has been saved'));
 				return $this->redirect(['action' => 'index']);
 			}
 			$this->Flash->error(__('Unable to add your article'));
@@ -72,7 +72,7 @@ class ArticlesController extends AppController
 			$this->Articles->patchEntity($article, $this->request->getData());
 
 			if($this->Articles->save($article)){
-				$this->flash->success(__('Your article has been updated'));
+				$this->Flash->success(__('Your article has been updated'));
 				return $this->redirect(['action' => 'index']);
 			}
 			$this->Flash->error(__('Unable to update your article'));
@@ -84,9 +84,10 @@ class ArticlesController extends AppController
 	public function delete($slug = null)
 	{
 		// If the user attempts to delete an article using a GET request, allowMethod() will throw an exception.
-		$this->allowMethod('post','delete');
+		$this->request->allowMethod('post','delete');
+		
 
-		$articles = $this->Articles->findBySlug($slug)->firstOrFail();
+		$article = $this->Articles->findBySlug($slug)->firstOrFail();
 	
 		if($this->Articles->delete($article)){
 			$this->Flash->success(__('The {0} article has been deleted.', $article->title));

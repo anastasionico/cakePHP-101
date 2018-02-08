@@ -25,8 +25,8 @@
             <?= $this->Html->link('Edit', ['action' => 'edit', $article->slug]) ?>
             <?= $this->Form->postlink(
                     'Delete', 
-                    ['action' => 'delete', $article->slug ]
-                    ['confirm' -> 'Are you sure?']) 
+                    ['action' => 'delete', $article->slug ],
+                    ['confirm' => 'Are you sure?']) 
             ?>
         </td>
     </tr>
