@@ -43,6 +43,11 @@ use Cake\Routing\Route\DashedRoute;
  */
 Router::defaultRouteClass(DashedRoute::class);
 
+// The below defines a new ‘route’ which connects the /articles/tagged/ path, to ArticlesController::tags().
+Router::scope('/articles', ['controller' => 'Articles'], function ($routes) {
+        $routes->connect('/tagged/*', ['action' => 'tags']);
+});
+
 Router::scope('/', function (RouteBuilder $routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
