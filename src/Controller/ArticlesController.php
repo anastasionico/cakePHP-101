@@ -112,7 +112,7 @@ class ArticlesController extends AppController
 	    // The 'pass' key is provided by CakePHP and contains all
 	    // the passed URL path segments in the request.
 	    $tags = $this->request->getParam('pass');
-	    die(var_dump($tags));
+	    // die(var_dump($tags));
 	    // Use the ArticlesTable to find tagged articles.
 	    $articles = $this->Articles->find('tagged', [
 	        'tags' => $tags
@@ -148,7 +148,9 @@ class ArticlesController extends AppController
     	    
  	public function help()
    	{	
-   		die('help');
+   		$params = $this->request->getParam('pass');
+   		$this->set(['params' => $params]);
+   		
    	}   
 
 }

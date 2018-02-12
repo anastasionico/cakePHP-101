@@ -9,14 +9,17 @@ Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/articles', ['controller' => 'Articles'], function ($routes) {
     $routes->connect('/tagged/*', ['action' => 'tags']);
-    $routes->connect('/help',['action' => 'help']);
+    $routes->connect('/help/:message-:code',['action' => 'help'])
+    ->setPass(['message', 'code']);
 });
 
 
-Router::scope('/', function (RouteBuilder $routes) {
-   
-    $routes->connect('/', ['controller' => 'Articles', 'action' => 'index', 'home']);
 
+
+Router::scope('/', function (RouteBuilder $routes) {
+	
+    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+	$routes->redirect('/', ['controller' => 'articles', 'action' => 'index']);   	
    
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
@@ -26,5 +29,42 @@ Router::scope('/', function (RouteBuilder $routes) {
 
 
 Plugin::routes();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
