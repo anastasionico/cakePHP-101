@@ -5,3 +5,11 @@
 	</h2>
  	
 <?php endforeach ?>
+
+<?php foreach ($users as $user) : ?>
+	
+	<h2>
+		<?= $user->id .' '. $user->email ?>
+	</h2>
+ 	
+<?php endforeach ?>

@@ -14,12 +14,10 @@ Router::scope('/articles', ['controller' => 'Articles'], function ($routes) {
 });
 
 
-
-
 Router::scope('/', function (RouteBuilder $routes) {
 	
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-	$routes->redirect('/', ['controller' => 'articles', 'action' => 'index']);   	
+	$routes->redirect('/', ['controller' => 'Articles', 'action' => 'index']);   	
    
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 

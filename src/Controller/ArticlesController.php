@@ -7,11 +7,14 @@ class ArticlesController extends AppController
 {
 	public function inizialize()
 	{
+		
 		parent::inizialize();
-
+		
 		$this->loadComponent('Paginator');
 		$this->loadComponent('flash');
 		$this->Auth->allow(['tags','help']);
+		
+
 	}
 
 	// 	By defining function index() in our ArticlesController, users can now access the logic there by requesting www.example.com/articles/index
@@ -148,9 +151,14 @@ class ArticlesController extends AppController
     	    
  	public function help()
    	{	
-   		$params = $this->request->getParam('pass');
-   		$this->set(['params' => $params]);
+   		$this->loadModel('Users');
+   		$users = $this->Users->find('all');
    		
-   	}   
+   		
+   		$params = $this->request->getParam('pass');
+   		$this->set(['params' => $params, 'users' => $users ]);
+		
+		// $this->setAction('tags');
+ 	}   
 
 }
