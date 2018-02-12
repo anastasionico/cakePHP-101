@@ -12,7 +12,6 @@ use App\Controller\AppController;
  */
 class TagsController extends AppController
 {
-
     /**
      * Index method
      *

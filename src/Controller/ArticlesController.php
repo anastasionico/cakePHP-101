@@ -11,8 +11,7 @@ class ArticlesController extends AppController
 
 		$this->loadComponent('Paginator');
 		$this->loadComponent('flash');
-
-		$this->Auth->allow(['tags']);
+		$this->Auth->allow(['tags','help']);
 	}
 
 	// 	By defining function index() in our ArticlesController, users can now access the logic there by requesting www.example.com/articles/index
@@ -113,7 +112,7 @@ class ArticlesController extends AppController
 	    // The 'pass' key is provided by CakePHP and contains all
 	    // the passed URL path segments in the request.
 	    $tags = $this->request->getParam('pass');
-
+	    die(var_dump($tags));
 	    // Use the ArticlesTable to find tagged articles.
 	    $articles = $this->Articles->find('tagged', [
 	        'tags' => $tags
@@ -147,6 +146,9 @@ class ArticlesController extends AppController
 	    return $article->user_id === $user['id'];
 	}
     	    
-    
+ 	public function help()
+   	{	
+   		die('help');
+   	}   
 
 }

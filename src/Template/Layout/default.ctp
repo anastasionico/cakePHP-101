@@ -35,11 +35,24 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
+        <ul class="title-area large-3 medium-8">
+            <!-- <li class="name">
+                <h4><a href=""><?= $this->fetch('title') ?></a></h4>
+            </li> -->
+            <li class="name" style="display: inline-block;">
+                <a href="/tags">Tags</a>
+            </li>
+            <li class="name" style="display: inline-block;">
+                <a href="/articles">Article</a>
+            </li>
+            <li class="name" style="display: inline-block;">
+                <a href="/tasks">Tasks</a>
+            </li>
+            <li class="name" style="display: inline-block;">
+                <a href="/users">Users</a>
             </li>
         </ul>
+
         <div class="top-bar-section">
             <ul class="right">
                 <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
