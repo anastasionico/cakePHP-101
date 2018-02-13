@@ -159,6 +159,14 @@ class ArticlesController extends AppController
    		$this->set(['params' => $params, 'users' => $users ]);
 		
 		// $this->setAction('tags');
- 	}   
+	}   
+
+	public function extended()
+	{
+	}
 
 }
+
+
+
+
