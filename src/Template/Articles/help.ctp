@@ -1,3 +1,5 @@
+<?php $this->extend('extended') ?>
+
 <?php foreach ($params as $param) : ?>
 	
 	<h2>

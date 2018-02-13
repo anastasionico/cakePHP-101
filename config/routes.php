@@ -11,6 +11,7 @@ Router::scope('/articles', ['controller' => 'Articles'], function ($routes) {
     $routes->connect('/tagged/*', ['action' => 'tags']);
     $routes->connect('/help/:message-:code',['action' => 'help'])
     ->setPass(['message', 'code']);
+    $routes->connect('extended', ['action' => 'extended']);
 });
 
 
@@ -27,42 +28,3 @@ Router::scope('/', function (RouteBuilder $routes) {
 
 
 Plugin::routes();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

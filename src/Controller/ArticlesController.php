@@ -161,4 +161,7 @@ class ArticlesController extends AppController
 		// $this->setAction('tags');
  	}   
 
+ 	public function extended()
+	{
+	}
 }
