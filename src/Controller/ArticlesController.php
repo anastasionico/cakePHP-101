@@ -164,4 +164,9 @@ class ArticlesController extends AppController
  	public function extended()
 	{
 	}
+
+	public function Elems()
+	{
 }
+}
+

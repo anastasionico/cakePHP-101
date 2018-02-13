@@ -12,6 +12,7 @@ Router::scope('/articles', ['controller' => 'Articles'], function ($routes) {
     $routes->connect('/help/:message-:code',['action' => 'help'])
     ->setPass(['message', 'code']);
     $routes->connect('extended', ['action' => 'extended']);
+    $routes->connect('elements', ['action' => 'Elems']);
 });
 
 

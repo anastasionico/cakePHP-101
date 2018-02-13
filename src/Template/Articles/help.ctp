@@ -1,5 +1,5 @@
 <?php $this->extend('extended') ?>
-
+<?= $this->element('sidebar') ?>
 <?php foreach ($params as $param) : ?>
 	
 	<h2>

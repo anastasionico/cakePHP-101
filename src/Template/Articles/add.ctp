@@ -1,4 +1,5 @@
 <h1>Add Article</h1>
+<?= $this->element('sidebar'); ?>
 <?php
     // 	the below above generates <form method="post" action="/articles/add">
     echo $this->Form->create($article);

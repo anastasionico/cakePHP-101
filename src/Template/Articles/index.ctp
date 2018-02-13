@@ -8,6 +8,7 @@
 </nav>
 
 <h1>Articles</h1>
+<?= $this->element('sidebar'); ?>   
 <?= $this->Html->link('Add Article', ['action' => 'add']); ?>
 <table>
     <tr>
