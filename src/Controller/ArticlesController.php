@@ -8,14 +8,11 @@ class ArticlesController extends AppController
 {
 	public function inizialize()
 	{
-		
 		parent::inizialize();
 		
 		$this->loadComponent('Paginator');
 		$this->loadComponent('flash');
 		$this->Auth->allow(['tags','help']);
-		
-
 	}
 
 	// 	By defining function index() in our ArticlesController, users can now access the logic there by requesting www.example.com/articles/index
@@ -120,7 +117,7 @@ class ArticlesController extends AppController
 
 	public function tags(...$tags)
 	{
-	    $articles = TableRegistry::get('Articles')
+	    $articles = TableRegistry::get('Articles');
 	    // The 'pass' key is provided by CakePHP and contains all
 	    // the passed URL path segments in the request.
 	    $tags = $this->request->getParam('pass');

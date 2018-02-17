@@ -50,24 +50,19 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
-
         $this->loadComponent('Auth', [
-            'authorize'=> 'Controller',
             'authenticate' => [
-                'Form' => [
-                    'fields' => [
-                        'username' => 'email',
-                        'password' => 'password'
-                    ]
-                ]
+               'Form' => [
+                  'fields' => ['username' => 'username', 'password' => 'password']
+               ]
             ],
-            'loginAction' => [
-                'controller' => 'Users',
-                'action' => 'login'
-            ],
-             // If unauthorized, return them to page they were just on
+            'loginAction' => ['controller' => 'Authexs', 'action' => 'login'],
+            'loginRedirect' => ['controller' => 'Authexs', 'action' => 'index'],
+            'logoutRedirect' => ['controller' => 'Authexs', 'action' => 'login'],
             'unauthorizedRedirect' => $this->referer()
-        ]);
+         ]);
+
+        
 
         // Allow the display action so our PagesController
         // continues to work. Also enable the read only actions.
