@@ -15,10 +15,16 @@ Router::scope('/articles', ['controller' => 'Articles'], function ($routes) {
     $routes->connect('elements', ['action' => 'Elems']);
 });
 
+Router::scope('/auth', ['controller' => 'Authxs'], function($routes){
+    $routes->connect('/error:param', ['action' => 'error'])
+    ->setPass(['param']);
+});
+
+
 
 Router::scope('/', function (RouteBuilder $routes) {
 	
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    // $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 	$routes->redirect('/', ['controller' => 'Articles', 'action' => 'index']);   	
    
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);

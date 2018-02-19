@@ -53,7 +53,7 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
             'authenticate' => [
                'Form' => [
-                  'fields' => ['username' => 'username', 'password' => 'password']
+                  'fields' => ['username' => 'email', 'password' => 'password']
                ]
             ],
             'loginAction' => ['controller' => 'Authexs', 'action' => 'login'],
