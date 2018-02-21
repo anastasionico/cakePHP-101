@@ -20,6 +20,12 @@ Router::scope('/auth', ['controller' => 'Authxs'], function($routes){
     ->setPass(['param']);
 });
 
+Router::scope('/session', ['controller' => 'Sessions'], function($routes){
+    $routes->connect('/write:value', ['action' => 'write'])
+    ->setPass(['value']);
+    $routes->connect('/read', ['action' => 'read']);
+    $routes->connect('/destroy', ['action' => 'destroy']);
+});
 
 
 Router::scope('/', function (RouteBuilder $routes) {
@@ -35,3 +41,39 @@ Router::scope('/', function (RouteBuilder $routes) {
 
 
 Plugin::routes();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

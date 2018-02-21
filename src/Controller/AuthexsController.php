@@ -41,8 +41,26 @@
 
 
 
-
          
       }
    }
 ?>
+
+
+
+
+<?php
+
+
+// $session = $this->request->session();
+
+// $session->write('key', 'value');
+// $session->read('key');
+
+// $session->check('key');
+
+
+// $session->delete('key');
+// $session->consume('key');
+// $session->destroy('key');
+// $session->renew('key');
